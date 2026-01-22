@@ -11,7 +11,7 @@ spec:
   sources:
   - repoURL: https://github.com/Calcagiara/argotests.git
     targetRevision: main
-    path: dslab
+    path: atlas/most
   - repoURL: https://scc-digitalhub.github.io/digitalhub/
     chart: digitalhub
     targetRevision: 0.14.1
