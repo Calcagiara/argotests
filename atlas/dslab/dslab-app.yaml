@@ -7,7 +7,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: dslab-platform
-  project: atlas-platform
+  project: default
   sources:
   - repoURL: https://github.com/Calcagiara/argotests.git
     targetRevision: main
@@ -22,10 +22,6 @@ spec:
     targetRevision: main
     ref: values
   syncPolicy:
-    managedNamespaceMetadata:
-      labels:
-        pod-security.kubernetes.io/enforce: baseline
-        pod-security.kubernetes.io/enforce-version: latest
     automated:
       prune: false
       selfHeal: true
