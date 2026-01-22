@@ -7,7 +7,7 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: most-platform
-  project: atlas-platform
+  project: default
   sources:
   - repoURL: https://github.com/Calcagiara/argotests.git
     targetRevision: main
