@@ -1,17 +1,26 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: tests
+  name: dslab-platform
   namespace: argocd
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: tests
+    namespace: dslab-platform
   project: default
   sources:
   - repoURL: https://github.com/Calcagiara/argotests.git
     targetRevision: main
-    path: nginx
+    path: dslab
+  - repoURL: https://scc-digitalhub.github.io/digitalhub/
+    chart: digitalhub
+    targetRevision: 0.14.1
+    helm:
+      valueFiles:
+      - $values/charts/digitalhub/values-demo.yaml
+  - repoURL: https://github.com/Calcagiara/digitalhub.git
+    targetRevision: main
+    ref: values
   syncPolicy:
     managedNamespaceMetadata:
       labels:
